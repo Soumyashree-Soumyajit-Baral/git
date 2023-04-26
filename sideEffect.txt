@@ -1,0 +1,17 @@
+CHAKIT GUPTA 00710:38
+
+We'll soumyashree there can be 2 reasons behind ur problem
+
+CHAKIT GUPTA 00710:39
+
+routes were going through the service worker which again requested and returned the request so the server got 2 requests 1 from the main fetch an another from the service workers fetch.
+Try using  respondWith() instead of return
+
+Or
+
+The additional fetch request you are seeing is an OPTIONS request (pre-flight request) which occurs when headers are passed in the request.
+
+CHAKIT GUPTA 00710:40
+
+Though it won't affect in the long run you can still proceed normally
+Actually there's too much noise so i had to come up here in chats
